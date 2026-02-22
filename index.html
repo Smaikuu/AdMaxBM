@@ -642,7 +642,7 @@
           <div class="contact-icon">📞</div>
           <div>
             <h4>Telefon</h4>
-            <a href="tel: 530 028 993">+48 530 028 993</a>
+            <a href="tel:+48530028993">+48 530 028 993</a>
           </div>
         </div>
         <div class="contact-item">
@@ -670,35 +670,37 @@
     </div>
     <div class="contact-form reveal">
       <h3>Wyślij wiadomość</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label>Imię i nazwisko</label>
-          <input type="text" placeholder="Jan Kowalski">
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Imię i nazwisko</label>
+            <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789">
+          </div>
         </div>
         <div class="form-group">
-          <label>Telefon</label>
-          <input type="tel" placeholder="+48 123 456 789">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="jan@kowalski.pl" required>
         </div>
-      </div>
-      <div class="form-group">
-        <label>E-mail</label>
-        <input type="email" placeholder="jan@kowalski.pl">
-      </div>
-      <div class="form-group">
-        <label>Rodzaj nieruchomości</label>
-        <select>
-          <option value="">Wybierz typ...</option>
-          <option>Wspólnota mieszkaniowa</option>
-          <option>Budynek komercyjny</option>
-          <option>Nieruchomość prywatna</option>
-          <option>Inne</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Wiadomość</label>
-        <textarea placeholder="Opisz swoją nieruchomość i oczekiwania..."></textarea>
-      </div>
-      <button class="form-submit" id="submitBtn">Wyślij zapytanie &rarr;</button>
+        <div class="form-group">
+          <label for="property">Rodzaj nieruchomości</label>
+          <select id="property" name="property">
+            <option value="">Wybierz typ...</option>
+            <option>Wspólnota mieszkaniowa</option>
+            <option>Budynek komercyjny</option>
+            <option>Nieruchomość prywatna</option>
+            <option>Inne</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Wiadomość</label>
+          <textarea id="message" name="message" placeholder="Opisz swoją nieruchomość i oczekiwania..."></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="submitBtn">Wyślij zapytanie &rarr;</button>
+      </form>
     </div>
   </div>
 </section>
