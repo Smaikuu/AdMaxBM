@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdMax Bartosz Mroziuk – Administrowanie Nieruchomościami</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --navy-mid: #162a52;
+    --gold: #c9a84c;
+    --gold-light: #e2c87e;
+    --cream: #f8f4ee;
+    --white: #ffffff;
+    --gray: #6b7280;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: var(--cream);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5%;
+    background: rgba(15,31,61,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    transition: padding 0.3s;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--white); letter-spacing: 0.04em; text-decoration: none;
+  }
+  .logo span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.85rem; font-weight: 400;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--navy) !important;
+    padding: 0.5rem 1.3rem; border-radius: 2px;
+    font-weight: 500 !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1607427293702-036933bbf746?w=1600&q=85');
+    background-size: cover; background-position: center;
+    filter: brightness(0.28) saturate(0.7);
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 60%),
+      linear-gradient(to right, rgba(15,31,61,0.85) 40%, transparent 100%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 5%; max-width: 800px;
+    animation: fadeUp 1s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 1.8rem;
+    animation: fadeUp 1s 0.15s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 600; line-height: 1.1;
+    color: var(--white); margin-bottom: 1.4rem;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+
+  .hero p {
+    font-size: 1.05rem; font-weight: 300; line-height: 1.75;
+    color: rgba(255,255,255,0.75); max-width: 520px; margin-bottom: 2.4rem;
+    animation: fadeUp 1s 0.45s ease both;
+  }
+
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 1s 0.6s ease both;
+  }
+
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 2.2rem; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+    letter-spacing: 0.04em; border-radius: 2px; text-decoration: none;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent; color: var(--white);
+    padding: 0.85rem 2.2rem; border: 1px solid rgba(255,255,255,0.35); cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 400;
+    letter-spacing: 0.04em; border-radius: 2px; text-decoration: none;
+    transition: border-color 0.25s, color 0.25s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    position: absolute; bottom: 3rem; right: 5%;
+    display: flex; gap: 3rem; z-index: 2;
+    animation: fadeUp 1s 0.75s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem; font-weight: 600; color: var(--gold); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.3rem;
+  }
+
+  /* SECTIONS */
+  section { padding: 5.5rem 5%; }
+
+  .section-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); display: block; margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; line-height: 1.2; color: var(--navy);
+  }
+  .section-title-white { color: var(--white); }
+
+  /* O NAS */
+  .about { background: var(--white); }
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    align-items: center; max-width: 1200px; margin: 0 auto;
+  }
+  .about-text p { color: var(--gray); line-height: 1.8; margin-top: 1.4rem; font-size: 0.97rem; }
+  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+  .highlight { border-left: 3px solid var(--gold); padding: 0.6rem 0 0.6rem 1.2rem; }
+  .highlight h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); }
+  .highlight p { font-size: 0.82rem; color: var(--gray); margin-top: 0.2rem; }
+
+  .about-visual { position: relative; }
+  .about-img-wrap {
+    width: 100%; aspect-ratio: 4/5; background: var(--navy);
+    border-radius: 3px; overflow: hidden;
+  }
+  .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.75; }
+  .about-badge {
+    position: absolute; bottom: -1.5rem; left: -2rem;
+    background: var(--gold); color: var(--navy); padding: 1.6rem;
+    font-family: 'Cormorant Garamond', serif; width: 140px; text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  }
+  .about-badge .big { font-size: 2.8rem; font-weight: 700; line-height: 1; }
+  .about-badge .small { font-size: 0.75rem; font-weight: 500; margin-top: 0.3rem; }
+
+  /* USLUGI */
+  .services { background: var(--cream); }
+  .services-header { text-align: center; max-width: 600px; margin: 0 auto 3.5rem; }
+  .services-header p { color: var(--gray); margin-top: 1rem; line-height: 1.7; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+  }
+  .service-card {
+    background: var(--white); border-radius: 3px; padding: 2.2rem 2rem;
+    border: 1px solid rgba(201,168,76,0.15);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-color: var(--gold); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 52px; height: 52px; background: rgba(201,168,76,0.1); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 1.3rem; font-size: 1.5rem;
+  }
+  .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 0.7rem; }
+  .service-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+
+  /* DLACZEGO MY */
+  .why { background: var(--navy); position: relative; overflow: hidden; }
+  .why::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  }
+  .why-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; position: relative; z-index: 1;
+  }
+  .why-features { display: flex; flex-direction: column; gap: 1.8rem; margin-top: 2.5rem; }
+  .why-feature { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .why-feature-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700;
+    color: rgba(201,168,76,0.25); line-height: 1; min-width: 2.5rem;
+  }
+  .why-feature h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+  .why-feature p { font-size: 0.86rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .why-checklist { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); border-radius: 3px; padding: 2.5rem; }
+  .why-checklist h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 1.5rem; }
+  .check-item { display: flex; gap: 0.8rem; align-items: flex-start; padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .check-item:last-child { border-bottom: none; }
+  .check-icon { color: var(--gold); font-size: 1rem; margin-top: 1px; }
+  .check-item span { font-size: 0.9rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+
+  /* NASZE BUDYNKI */
+  .buildings { background: var(--cream); }
+  .buildings-header { text-align: center; max-width: 600px; margin: 0 auto 3.5rem; }
+  .buildings-header p { color: var(--gray); margin-top: 1rem; line-height: 1.7; }
+  .buildings-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+  }
+  .building-card {
+    background: var(--white); border-radius: 3px; overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.15);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  }
+  .building-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-color: var(--gold); }
+  .building-img-wrap { overflow: hidden; }
+  .building-img { width: 100%; height: 190px; object-fit: cover; transition: transform 0.4s; display: block; }
+  .building-card:hover .building-img { transform: scale(1.05); }
+  .building-info { padding: 1.4rem 1.5rem; }
+  .building-address { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+  .building-desc { font-size: 0.83rem; color: var(--gray); line-height: 1.55; }
+  .building-tag {
+    display: inline-block; margin-top: 0.9rem;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 0.25rem 0.7rem; border-radius: 2px;
+  }
+
+  /* PROCES */
+  .process { background: var(--white); }
+  .process-inner { max-width: 1000px; margin: 0 auto; }
+  .process-header { text-align: center; margin-bottom: 4rem; }
+  .steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .steps::before {
+    content: ''; position: absolute; top: 32px; left: 12%; right: 12%; height: 1px;
+    background: linear-gradient(90deg, var(--gold) 0%, rgba(201,168,76,0.2) 100%); z-index: 0;
+  }
+  .step { text-align: center; position: relative; z-index: 1; }
+  .step-num {
+    width: 64px; height: 64px; background: var(--navy); color: var(--gold);
+    font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700;
+    border-radius: 50%; border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem;
+  }
+  .step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+  .step p { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+
+  /* KONTAKT */
+  .contact { background: var(--cream); }
+  .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+  .contact-info { margin-top: 2rem; }
+  .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.8rem; }
+  .contact-icon {
+    width: 44px; height: 44px; background: var(--navy); border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.1rem;
+  }
+  .contact-item h4 { font-size: 0.78rem; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; }
+  .contact-item p, .contact-item a { font-size: 0.97rem; color: var(--navy); font-weight: 500; text-decoration: none; }
+  .contact-item a:hover { color: var(--gold); }
+  .contact-form {
+    background: var(--white); border-radius: 3px; padding: 2.5rem;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.05); border: 1px solid rgba(201,168,76,0.1);
+  }
+  .contact-form h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--navy); margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 500; color: var(--gray); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 0.85rem 1rem; border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 2px; background: var(--cream);
+    font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: var(--navy); outline: none;
+    transition: border-color 0.25s;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); background: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit {
+    width: 100%; background: var(--navy); color: var(--white);
+    padding: 1rem; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; font-size: 0.92rem; font-weight: 500;
+    letter-spacing: 0.06em; border-radius: 2px;
+    transition: background 0.25s, transform 0.2s; margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: var(--navy-mid); transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer { background: var(--navy); padding: 3.5rem 5% 2rem; color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  .footer-inner {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem;
+    max-width: 1200px; margin: 0 auto; padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo { font-size: 1.4rem; }
+  .footer-brand p { margin-top: 1rem; line-height: 1.7; color: rgba(255,255,255,0.4); font-size: 0.84rem; }
+  .footer-col h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.5rem; }
+  .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--gold); }
+  .footer-bottom { text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.25); max-width: 1200px; margin: 1.8rem auto 0; }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(25px); transition: opacity 0.7s, transform 0.7s; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .about-inner, .why-inner, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .steps::before { display: none; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .about-badge { display: none; }
+    .hero-stats { position: static; margin-top: 3rem; justify-content: center; }
+    .hero-content { max-width: 100%; }
+    .about-highlights { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    section { padding: 4rem 5%; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="logo">Ad<span>Max</span></a>
+  <ul class="nav-links">
+    <li><a href="#o-nas">O nas</a></li>
+    <li><a href="#uslugi">Usługi</a></li>
+    <li><a href="#dlaczego">Dlaczego my</a></li>
+    <li><a href="#budynki">Nasze budynki</a></li>
+    <li><a href="#proces">Proces</a></li>
+    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <span class="hero-label">Profesjonalne zarządzanie nieruchomościami</span>
+    <h1>Twoja nieruchomość<br>w <em>pewnych rękach</em></h1>
+    <p>AdMax Bartosz Mroziuk to firma z wieloletnim doświadczeniem w kompleksowej administracji nieruchomości. Zajmujemy się zarządzaniem wspólnotami mieszkaniowymi, budynkami komercyjnymi oraz nadzorem technicznym.</p>
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-primary">Bezpłatna konsultacja</a>
+      <a href="#uslugi" class="btn-outline">Nasze usługi</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">13+</div>
+      <div class="stat-label">Lat doświadczenia</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">Udanych projektów</div>
+    </div>
+  </div>
+</section>
+
+<!-- O NAS -->
+<section class="about" id="o-nas">
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <span class="section-label">O firmie</span>
+      <h2 class="section-title">Rzetelne i transparentne zarządzanie nieruchomościami</h2>
+      <p>AdMax Bartosz Mroziuk to firma działająca z pasją do nieruchomości i pełnym zaangażowaniem w każdy powierzony obiekt. Łączymy doświadczenie z nowoczesnym podejściem do administracji, zapewniając właścicielom i mieszkańcom spokój ducha na co dzień.</p>
+      <p>Stawiamy na otwartą komunikację, terminowość i najwyższe standardy obsługi. Każda wspólnota i każdy właściciel traktowany jest indywidualnie – bez szablonów, za to z uwagą na szczegóły.</p>
+      <div class="about-highlights">
+        <div class="highlight">
+          <h4>Indywidualne podejście</h4>
+          <p>Dopasowujemy zakres usług do potrzeb każdego obiektu</p>
+        </div>
+        <div class="highlight">
+          <h4>Transparentne rozliczenia</h4>
+          <p>Pełna przejrzystość finansowa i regularne raporty</p>
+        </div>
+        <div class="highlight">
+          <h4>Dostępność</h4>
+          <p>Reagujemy szybko na awarie i pilne zgłoszenia</p>
+        </div>
+        <div class="highlight">
+          <h4>Sprawdzona sieć</h4>
+          <p>Zaufani wykonawcy i specjaliści w każdej branży</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="AdMax budynek">
+      </div>
+      <div class="about-badge">
+        <div class="big">13</div>
+        <div class="small">lat na rynku</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USŁUGI -->
+<section class="services" id="uslugi">
+  <div class="services-header reveal">
+    <span class="section-label">Zakres działalności</span>
+    <h2 class="section-title">Kompleksowe usługi administrowania</h2>
+    <p>Oferujemy pełen zakres usług związanych z administrowaniem i zarządzaniem nieruchomościami – od spraw technicznych po finansowe.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🏢</div>
+      <h3>Zarządzanie wspólnotami mieszkaniowymi</h3>
+      <p>Kompleksowa obsługa wspólnot mieszkaniowych obejmująca m.in. organizację zebrań, prowadzenie dokumentacji, realizację uchwał oraz reprezentowanie wspólnoty na zewnątrz.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🔧</div>
+      <h3>Nadzór techniczny i konserwacja</h3>
+      <p>Bieżące utrzymanie technicznego stanu nieruchomości, koordynacja przeglądów budowlanych, nadzór nad pracami remontowymi i usuwanie awarii.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">💰</div>
+      <h3>Obsługa finansowo-księgowa</h3>
+      <p>Prowadzenie rachunkowości wspólnoty, windykacja należności, planowanie budżetu, sprawozdania finansowe oraz rozliczenia mediów dla mieszkańców.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📋</div>
+      <h3>Obsługa administracyjna</h3>
+      <p>Prowadzenie pełnej dokumentacji nieruchomości, obsługa korespondencji, ubezpieczenia, kontakty z urzędami i dostawcami mediów.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🌿</div>
+      <h3>Utrzymanie czystości i terenów zielonych</h3>
+      <p>Organizacja i nadzór nad utrzymaniem porządku, sprzątaniem klatek schodowych, pielęgnacją zieleni i odśnieżaniem w sezonie zimowym.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📍</div>
+      <h3>Lokalne działanie</h3>
+      <p>Działamy na dobrze znanych sobie obszarach Warszawy – znamy lokalne uwarunkowania, przepisy dzielnicowe i sprawdzonych wykonawców, co przekłada się na szybkość i skuteczność każdej interwencji.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DLACZEGO MY -->
+<section class="why" id="dlaczego">
+  <div class="why-inner">
+    <div class="reveal">
+      <span class="section-label" style="color: var(--gold)">Dlaczego AdMax</span>
+      <h2 class="section-title section-title-white">Wybierz partnera, któremu możesz zaufać</h2>
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-feature-num">01</div>
+          <div>
+            <h4>Doświadczony Zarządca</h4>
+            <p>Nasz zespół posiada licencję zarządcy nieruchomości oraz wieloletnie, potwierdzone doświadczenie w branży.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-num">02</div>
+          <div>
+            <h4>Profesjonalne podejście</h4>
+            <p>Korzystamy z systemów ułatwiających komunikację, raportowanie i dostęp do dokumentów online.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-num">03</div>
+          <div>
+            <h4>Lokalna obecność</h4>
+            <p>Działamy lokalnie – znamy specyfikę rynku, przepisy i wykonawców, co przekłada się na skuteczność działań.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-checklist reveal">
+      <h3>Co zyskujesz wybierając AdMax?</h3>
+      <div class="check-item"><span class="check-icon">✦</span><span>Właściciel firmy dostępny bezpośrednio telefonicznie</span></div>
+      <div class="check-item"><span class="check-icon">✦</span><span>Szybka reakcja na awarie – niemal natychmiastowe działanie</span></div>
+      <div class="check-item"><span class="check-icon">✦</span><span>Profesjonalna organizacja zebrań wspólnoty i protokołowanie zdarzeń</span></div>
+      <div class="check-item"><span class="check-icon">✦</span><span>Stały monitoring stanu technicznego i planowanie remontów</span></div>
+      <div class="check-item"><span class="check-icon">✦</span><span>Negocjowanie korzystnych umów z dostawcami i wykonawcami</span></div>
+      <div class="check-item"><span class="check-icon">✦</span><span>Obsługa ubezpieczeń i pełna dokumentacja nieruchomości</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NASZE BUDYNKI -->
+<section class="buildings" id="budynki">
+  <div class="buildings-header reveal">
+    <span class="section-label">Nasze budynki</span>
+    <h2 class="section-title">Zarządzamy w sercu Warszawy</h2>
+    <p>Obsługujemy starannie wybrane nieruchomości na Mokotowie – znamy je doskonale i dbamy o nie z pełnym zaangażowaniem.</p>
+  </div>
+  <div class="buildings-grid">
+    <div class="building-card reveal">
+      <div class="building-img-wrap">
+        <img class="building-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7KdD6ZXfMNgfqj7GlPm63eX4tDrGCvEHSSw&sw=600&q=80" alt="Puławska 111A">
+      </div>
+      <div class="building-info">
+        <div class="building-address">Puławska 111A</div>
+        <div class="building-desc">Nasz największy budynek w sercu Mokotowa – prestiżowa lokalizacja przy jednej z głównych arterii Warszawy.</div>
+        <span class="building-tag">Mokotów</span>
+      </div>
+    </div>
+    <div class="building-card reveal">
+      <div class="building-img-wrap">
+        <img class="building-img" src="https://www.warszawa1939.pl/sites/default/files/styles/full/public/media_uploaded/obiekty/dolna/dolna_12_01.jpg?itok=myRdlQkow=600&q=80" alt="Dolna 12">
+      </div>
+      <div class="building-info">
+        <div class="building-address">Dolna 12</div>
+        <div class="building-desc">Budynek powstały w 1946 roku, położony na mokotowskich Sielcach.</div>
+        <span class="building-tag">Mokotów</span>
+      </div>
+    </div>
+    <div class="building-card reveal">
+      <div class="building-img-wrap">
+        <img class="building-img" src="https://www.warszawa1939.pl/sites/default/files/styles/full/public/media_uploaded/obiekty/pulawska/pulawska_49_02.jpg?itok=lOxH_yTFw=600&q=80" alt="Puławska 49">
+      </div>
+      <div class="building-info">
+        <div class="building-address">Puławska 49</div>
+        <div class="building-desc">Historyczny budynek zaprojektowany przez Henryka Barucha.</div>
+        <span class="building-tag">Mokotów</span>
+      </div>
+    </div>
+    <div class="building-card reveal">
+      <div class="building-img-wrap">
+        <img class="building-img" src="https://przystanekhistoria.pl/dokumenty/zalaczniki/166/166-137977.jpg?w=600&q=80" alt="Iwicka 8A">
+      </div>
+      <div class="building-info">
+        <div class="building-address">Iwicka 8A</div>
+        <div class="building-desc">Budynek o statusie zabytku, powstały w 1949 roku, położony 4 km od centrum Warszawy.</div>
+        <span class="building-tag">Mokotów</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCES -->
+<section class="process" id="proces">
+  <div class="process-inner">
+    <div class="process-header reveal">
+      <span class="section-label">Jak działamy</span>
+      <h2 class="section-title">Prosta droga do profesjonalnej obsługi</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h4>Bezpłatna konsultacja</h4>
+        <p>Omawiamy Twoje potrzeby i specyfikę nieruchomości podczas spotkania lub rozmowy telefonicznej.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h4>Audyt nieruchomości</h4>
+        <p>Przeprowadzamy wizję lokalną i ocenę stanu technicznego, dokumentacji oraz finansów obiektu.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h4>Umowa i przekazanie</h4>
+        <p>Podpisujemy umowę administracyjną i przejmujemy kompleksową obsługę nieruchomości.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h4>Bieżące zarządzanie</h4>
+        <p>Zapewniamy ciągłą opiekę, raportowanie i dostępność – nieruchomość działa sprawnie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact" id="kontakt">
+  <div class="contact-inner">
+    <div class="reveal">
+      <span class="section-label">Kontakt</span>
+      <h2 class="section-title">Porozmawiajmy o Twojej nieruchomości</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Adres</h4>
+            <p>Czerniakowska 71/313, 00-735 Warszawa</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Telefon</h4>
+            <a href="tel: 530 028 993">+48 530 028 993</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>E-mail</h4>
+            <a href="mailto:biuro@admaxbm.com">biuro@admaxbm.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <h4>Godziny pracy</h4>
+            <p>Pon–Pt: 8:00 – 17:00</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🔵</div>
+          <div>
+            <h4>Facebook</h4>
+            <a href="http://facebook.com/p/AdMax-Bartosz-Mroziuk-100057857011231/" target="_blank" rel="noopener">AdMax Bartosz Mroziuk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <h3>Wyślij wiadomość</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Imię i nazwisko</label>
+          <input type="text" placeholder="Jan Kowalski">
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="tel" placeholder="+48 123 456 789">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" placeholder="jan@kowalski.pl">
+      </div>
+      <div class="form-group">
+        <label>Rodzaj nieruchomości</label>
+        <select>
+          <option value="">Wybierz typ...</option>
+          <option>Wspólnota mieszkaniowa</option>
+          <option>Budynek komercyjny</option>
+          <option>Nieruchomość prywatna</option>
+          <option>Inne</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Wiadomość</label>
+        <textarea placeholder="Opisz swoją nieruchomość i oczekiwania..."></textarea>
+      </div>
+      <button class="form-submit" id="submitBtn">Wyślij zapytanie &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo">Ad<span>Max</span></a>
+      <p>Profesjonalne administrowanie nieruchomościami z wieloletnim doświadczeniem i indywidualnym podejściem do każdego klienta.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Usługi</h4>
+      <ul>
+        <li><a href="#uslugi">Wspólnoty mieszkaniowe</a></li>
+        <li><a href="#uslugi">Nadzór techniczny</a></li>
+        <li><a href="#uslugi">Obsługa finansowa</a></li>
+        <li><a href="#uslugi">Lokalne działanie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Firma</h4>
+      <ul>
+        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="#dlaczego">Dlaczego AdMax</a></li>
+        <li><a href="#budynki">Nasze budynki</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48530028993">+48 530 028 993</a></li>
+        <li><a href="mailto:biuro@admax.pl">biuro@admaxbm.com</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100057857011231" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AdMax Bartosz Mroziuk. Wszelkie prawa zastrzeżone. | <a href="#">Polityka prywatności</a></p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').style.padding = window.scrollY > 60 ? '0.7rem 5%' : '1.2rem 5%';
+  });
+
+  // Form
+  document.getElementById('submitBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    this.textContent = 'Wysłano! Odezwiemy się wkrótce.';
+    this.style.background = '#2d6a4f';
+    setTimeout(() => {
+      this.textContent = 'Wyślij zapytanie \u2192';
+      this.style.background = '';
+    }, 4000);
+  });
+</script>
+</body>
+</html>
