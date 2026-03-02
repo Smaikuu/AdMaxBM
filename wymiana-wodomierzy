@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wymiana wodomierzy w 2027 roku – obowiązki wspólnot i właścicieli lokali | AdMax Blog</title>
+<meta name="description" content="Od 2027 roku część wspólnot mieszkaniowych będzie musiała wymienić wodomierze. Dowiedz się kto płaci, jak zaplanować wymianę i czy warto wybrać wodomierze zdalnego odczytu.">
+<link rel="icon" type="image/png" href="../logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --navy-mid: #162a52;
+    --gold: #c9a84c;
+    --gold-light: #e2c87e;
+    --cream: #f8f4ee;
+    --white: #ffffff;
+    --gray: #6b7280;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--cream); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5%;
+    background: rgba(15,31,61,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--white); letter-spacing: 0.04em; text-decoration: none;
+  }
+  .logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.85rem; font-weight: 400;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold) !important; color: var(--navy) !important;
+    padding: 0.5rem 1.3rem; border-radius: 2px; font-weight: 500 !important;
+  }
+
+  /* HERO */
+  .article-hero {
+    padding: 9rem 5% 5rem;
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  .article-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+  }
+  .article-hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-inner {
+    max-width: 800px; margin: 0 auto; position: relative; z-index: 1;
+    animation: fadeUp 0.9s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .article-tag {
+    display: inline-block; margin-bottom: 1.2rem;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.35rem 1rem; border-radius: 2px;
+  }
+  .article-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 600; line-height: 1.15;
+    color: var(--white); margin-bottom: 1rem;
+  }
+  .article-hero h1 em { color: var(--gold); font-style: normal; }
+  .article-meta {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: rgba(255,255,255,0.4);
+    margin-top: 1.5rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ARTICLE */
+  .article-wrap {
+    max-width: 800px; margin: 0 auto;
+    padding: 4rem 5% 6rem;
+  }
+
+  .lead {
+    font-size: 1.05rem; line-height: 1.85; color: var(--navy);
+    border-left: 3px solid var(--gold); padding-left: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .article-wrap h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem; font-weight: 600; color: var(--navy);
+    margin: 2.8rem 0 1rem;
+  }
+  .article-wrap p {
+    font-size: 0.97rem; line-height: 1.85; color: #374151;
+    margin-bottom: 1.2rem;
+  }
+  .article-wrap ul, .article-wrap ol {
+    margin: 0.5rem 0 1.4rem 1.4rem;
+  }
+  .article-wrap li {
+    font-size: 0.97rem; line-height: 1.75; color: #374151;
+    margin-bottom: 0.5rem; padding-left: 0.3rem;
+  }
+  .article-wrap ul li::marker { color: var(--gold); }
+  .article-wrap ol { counter-reset: steps; list-style: none; margin-left: 0; }
+  .article-wrap ol li {
+    counter-increment: steps;
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1rem 0; border-bottom: 1px solid rgba(201,168,76,0.12);
+  }
+  .article-wrap ol li:last-child { border-bottom: none; }
+  .article-wrap ol li::before {
+    content: counter(steps);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 700; color: var(--gold);
+    line-height: 1; min-width: 1.5rem; flex-shrink: 0;
+  }
+
+  .info-box {
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-left: 4px solid var(--gold);
+    border-radius: 2px; padding: 1.3rem 1.7rem; margin: 1.8rem 0;
+  }
+  .info-box p { margin: 0; font-size: 0.93rem; color: #374151; }
+  .info-box p + p { margin-top: 0.5rem; }
+
+  .cost-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin: 1.2rem 0 1.8rem;
+  }
+  .cost-item {
+    background: var(--white); border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 2px; padding: 1.3rem 1.5rem;
+  }
+  .cost-item .cost-label {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gray); margin-bottom: 0.4rem;
+  }
+  .cost-item .cost-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700; color: var(--navy);
+  }
+
+  /* CTA */
+  .article-cta {
+    background: var(--navy); border-radius: 3px;
+    padding: 2.2rem 2.5rem; margin: 3rem 0;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+  }
+  .article-cta div h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem;
+  }
+  .article-cta div p { color: rgba(255,255,255,0.5); font-size: 0.87rem; margin: 0; }
+  .cta-btn {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 1.8rem; border-radius: 2px; text-decoration: none;
+    font-weight: 500; font-size: 0.88rem; white-space: nowrap;
+    transition: background 0.2s; flex-shrink: 0;
+  }
+  .cta-btn:hover { background: var(--gold-light); }
+
+  /* BACK LINK */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.85rem; color: var(--gold); text-decoration: none;
+    margin-bottom: 2rem; letter-spacing: 0.04em;
+    transition: gap 0.2s;
+  }
+  .back-link:hover { gap: 0.8rem; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy); padding: 3.5rem 5% 2rem;
+    color: rgba(255,255,255,0.5); font-size: 0.85rem;
+  }
+  .footer-inner {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem;
+    max-width: 1200px; margin: 0 auto; padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand p { margin-top: 1rem; line-height: 1.7; color: rgba(255,255,255,0.4); font-size: 0.84rem; }
+  .footer-col h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.5rem; }
+  .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--gold); }
+  .footer-bottom { text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.25); max-width: 1200px; margin: 1.8rem auto 0; }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .cost-grid { grid-template-columns: 1fr; }
+    .article-cta { flex-direction: column; align-items: flex-start; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="logo"><img src="logo.png" alt="Logo" width="100">
+  <ul class="nav-links">
+    <li><a href="../index.html#o-nas">O nas</a></li>
+    <li><a href="../index.html#uslugi">Usługi</a></li>
+    <li><a href="../index.html#dlaczego">Dlaczego my</a></li>
+    <li><a href="../index.html#budynki">Nasze budynki</a></li>
+    <li><a href="../index.html#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="article-hero">
+  <div class="hero-inner">
+    <span class="article-tag">Technika · Prawo</span>
+    <h1>Wymiana wodomierzy w <em>2027</em> roku –<br>obowiązki wspólnot i właścicieli lokali</h1>
+    <div class="article-meta">
+      <span>📅 luty 2026</span>
+      <span>🕐 5 min. czytania</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE -->
+<main class="article-wrap">
+
+  <a href="../index.html#blog" class="back-link">← Powrót do bloga</a>
+
+  <p class="lead">Od 2027 roku część wspólnot mieszkaniowych będzie musiała wymienić wodomierze na urządzenia spełniające aktualne wymagania metrologiczne (dyrektywa MID 2014/32/UE). W praktyce oznacza to konieczność sprawdzenia dat legalizacji liczników i zaplanowania wymiany z odpowiednim wyprzedzeniem.</p>
+
+  <p>Dla zarządów wspólnot i spółdzielni to dobry moment, aby uporządkować temat rozliczeń wody oraz rozważyć montaż wodomierzy zdalnego odczytu. Im wcześniej temat zostanie zaadresowany, tym mniej stresu i kosztów w samym 2027 roku.</p>
+
+  <h2>Dlaczego wymiana wodomierzy jest konieczna?</h2>
+  <p>Wodomierze podlegają okresowej legalizacji. Po upływie jej ważności urządzenie nie powinno stanowić podstawy do rozliczeń. W zależności od typu wodomierza okres legalizacji wynosi zazwyczaj <strong>5 lat</strong>.</p>
+
+  <div class="info-box">
+    <p><strong>W praktyce oznacza to, że każda wspólnota powinna:</strong></p>
+    <p>sprawdzić rok produkcji lub datę ostatniej legalizacji urządzeń, uwzględnić harmonogram wymiany w planie gospodarczym oraz zabezpieczyć odpowiednie środki w budżecie – z funduszu eksploatacyjnego lub remontowego.</p>
+  </div>
+
+  <p>Brak aktualnej legalizacji może skutkować kwestionowaniem rozliczeń przez mieszkańców lub dostawcę wody. Warto sprawdzić lokalne regulaminy dostarczania wody, gdyż szczegółowe wymagania mogą się różnić w zależności od regionu i dostawcy.</p>
+
+  <h2>Koszt wymiany wodomierzy – ile to realnie kosztuje?</h2>
+  <p>Całkowity koszt wymiany jednego wodomierza mieszkaniowego składa się z dwóch elementów:</p>
+
+  <div class="cost-grid">
+    <div class="cost-item">
+      <div class="cost-label">Urządzenie</div>
+      <div class="cost-value">150–300 zł</div>
+    </div>
+    <div class="cost-item">
+      <div class="cost-label">Montaż</div>
+      <div class="cost-value">80–150 zł</div>
+    </div>
+  </div>
+
+  <p>W budynku wielolokalowym koszt wymiany zwykle rozkłada się proporcjonalnie na właścicieli lokali. W przypadku większych wspólnot zdecydowanie warto przeprowadzić zapytanie ofertowe do kilku firm instalacyjnych – różnice cenowe między wykonawcami mogą być znaczące.</p>
+
+  <h2>Czy warto wybrać wodomierze zdalnego odczytu?</h2>
+  <p>Coraz więcej wspólnot decyduje się na wodomierze radiowe. Choć ich cena zakupu jest nieco wyższa, korzyści operacyjne często przeważają nad jednorazowym kosztem inwestycji.</p>
+
+  <ul>
+    <li>Odczyt wskazań bez konieczności wchodzenia do lokali – brak konfliktów z mieszkańcami</li>
+    <li>Szybsze wykrywanie różnic bilansowych i potencjalnych nieszczelności</li>
+    <li>Bieżąca analiza zużycia wody w całym budynku</li>
+    <li>Oszczędność czasu administratora i redukcja błędów przy odczycie ręcznym</li>
+  </ul>
+
+  <p>W budynkach, w których wcześniej występowały duże niedobory w rozliczeniach, system zdalnego odczytu często pozwala ograniczyć rozbieżności i istotnie usprawnić kontrolę kosztów. Inwestycja potrafi zwrócić się już w ciągu pierwszego roku eksploatacji.</p>
+
+  <h2>Jak przygotować wspólnotę do wymiany wodomierzy?</h2>
+  <p>Dobrze zaplanowana wymiana to spokój zarządu i mieszkańców. Oto cztery kroki, które warto podjąć z wyprzedzeniem:</p>
+
+  <ol>
+    <li>Sprawdzenie terminów legalizacji wszystkich obecnych urządzeń w budynku i sporządzenie listy tych wymagających wymiany w 2027 roku.</li>
+    <li>Ujęcie inwestycji w planie gospodarczym wspólnoty na rok 2026 lub 2027 – z odpowiednią rezerwą budżetową.</li>
+    <li>Zebranie co najmniej trzech ofert od uprawnionych firm instalacyjnych i weryfikacja ich kwalifikacji.</li>
+    <li>Podjęcie stosownej uchwały przez wspólnotę mieszkaniową, określającej zakres, wykonawcę i sposób finansowania wymiany.</li>
+  </ol>
+
+  <p>Wcześniejsze zaplanowanie wymiany pozwala uniknąć kumulacji kosztów, presji czasowej w 2027 roku oraz ewentualnych problemów z dostępnością wykonawców – gdy wszyscy będą szukać firm instalacyjnych w tym samym czasie.</p>
+
+  <div class="article-cta">
+    <div>
+      <h3>Potrzebujesz pomocy z organizacją wymiany wodomierzy?</h3>
+      <p>Skontaktuj się z nami – doradzamy wspólnotom na każdym etapie planowania.</p>
+    </div>
+    <a href="../index.html#kontakt" class="cta-btn">Bezpłatna konsultacja →</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="logo"><img src="logo.png" alt="Logo" width="96">
+      <p>Profesjonalne administrowanie nieruchomościami z wieloletnim doświadczeniem i indywidualnym podejściem do każdego klienta.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Usługi</h4>
+      <ul>
+        <li><a href="../index.html#uslugi">Wspólnoty mieszkaniowe</a></li>
+        <li><a href="../index.html#uslugi">Nadzór techniczny</a></li>
+        <li><a href="../index.html#uslugi">Obsługa finansowa</a></li>
+        <li><a href="../index.html#uslugi">Lokalne działanie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Firma</h4>
+      <ul>
+        <li><a href="../index.html#o-nas">O nas</a></li>
+        <li><a href="../index.html#dlaczego">Dlaczego AdMax</a></li>
+        <li><a href="../index.html#budynki">Nasze budynki</a></li>
+        <li><a href="../index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48530028993">+48 530 028 993</a></li>
+        <li><a href="mailto:biuro@admaxbm.com">biuro@admaxbm.com</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100057857011231" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AdMax Bartosz Mroziuk. Wszelkie prawa zastrzeżone. | <a href="../polityka-prywatnosci.html">Polityka prywatności</a></p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').style.padding = window.scrollY > 60 ? '0.7rem 5%' : '1.2rem 5%';
+  });
+</script>
+
+</body>
+</html>
