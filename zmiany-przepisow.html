@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zmiany w przepisach dla wspólnot mieszkaniowych w 2026 roku | AdMax Blog</title>
+<meta name="description" content="Planowane nowelizacje przepisów dotyczących wspólnot mieszkaniowych w 2026 r. – głosowania zdalne, transparentność finansowa, fundusz remontowy i odpowiedzialność zarządu.">
+<link rel="icon" type="image/png" href="../logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --navy-mid: #162a52;
+    --gold: #c9a84c;
+    --gold-light: #e2c87e;
+    --cream: #f8f4ee;
+    --white: #ffffff;
+    --gray: #6b7280;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--cream); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5%;
+    background: rgba(15,31,61,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700;
+    color: var(--white); letter-spacing: 0.04em; text-decoration: none;
+  }
+  .logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.85rem; font-weight: 400;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold) !important; color: var(--navy) !important;
+    padding: 0.5rem 1.3rem; border-radius: 2px; font-weight: 500 !important;
+  }
+
+  /* HERO */
+  .article-hero {
+    padding: 9rem 5% 5rem;
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  .article-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+  }
+  .article-hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-inner {
+    max-width: 800px; margin: 0 auto; position: relative; z-index: 1;
+    animation: fadeUp 0.9s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .article-tag {
+    display: inline-block; margin-bottom: 1.2rem;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.35rem 1rem; border-radius: 2px;
+  }
+  .article-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 600; line-height: 1.15;
+    color: var(--white); margin-bottom: 1rem;
+  }
+  .article-hero h1 em { color: var(--gold); font-style: normal; }
+  .article-meta {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: rgba(255,255,255,0.4);
+    margin-top: 1.5rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ARTICLE */
+  .article-wrap {
+    max-width: 800px; margin: 0 auto;
+    padding: 4rem 5% 6rem;
+  }
+
+  .lead {
+    font-size: 1.05rem; line-height: 1.85; color: var(--navy);
+    border-left: 3px solid var(--gold); padding-left: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .article-wrap h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem; font-weight: 600; color: var(--navy);
+    margin: 2.8rem 0 1rem;
+  }
+  .article-wrap p {
+    font-size: 0.97rem; line-height: 1.85; color: #374151;
+    margin-bottom: 1.2rem;
+  }
+  .article-wrap ul { margin: 0.5rem 0 1.4rem 1.4rem; }
+  .article-wrap li {
+    font-size: 0.97rem; line-height: 1.75; color: #374151;
+    margin-bottom: 0.5rem; padding-left: 0.3rem;
+  }
+  .article-wrap ul li::marker { color: var(--gold); }
+
+  /* Changes grid */
+  .changes-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .change-card {
+    background: var(--white); border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 2px; padding: 1.5rem;
+    position: relative; overflow: hidden;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  .change-card:hover { border-color: var(--gold); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+  .change-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s;
+  }
+  .change-card:hover::before { transform: scaleX(1); }
+  .change-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 700;
+    color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 0.6rem;
+  }
+  .change-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+  .change-card p { font-size: 0.87rem; color: var(--gray); line-height: 1.65; margin: 0; }
+
+  /* Note box */
+  .note-box {
+    background: #f9f6f0;
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 2px; padding: 1.1rem 1.5rem; margin: 1.5rem 0;
+    font-size: 0.87rem; color: var(--gray); line-height: 1.65;
+  }
+  .note-box::before { content: '⚠ Uwaga: '; font-weight: 600; color: #a07820; }
+
+  /* Info box */
+  .info-box {
+    background: var(--white);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-left: 4px solid var(--gold);
+    border-radius: 2px; padding: 1.3rem 1.7rem; margin: 1.8rem 0;
+  }
+  .info-box p { margin: 0; font-size: 0.93rem; color: #374151; }
+  .info-box p + p { margin-top: 0.5rem; }
+
+  /* Checklist */
+  .checklist { list-style: none; margin: 1rem 0 1.5rem; }
+  .checklist li {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 0.85rem 0; border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: '✦'; color: var(--gold); font-size: 0.75rem;
+    margin-top: 4px; flex-shrink: 0;
+  }
+  .checklist li span { font-size: 0.97rem; color: #374151; line-height: 1.65; }
+  .checklist li strong { color: var(--navy); }
+
+  /* Summary dark block */
+  .summary-block {
+    background: var(--navy); border-radius: 3px;
+    padding: 2.2rem 2.5rem; margin: 2.5rem 0;
+  }
+  .summary-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .summary-block p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin: 0; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--navy); border-radius: 3px;
+    padding: 2.2rem 2.5rem; margin: 3rem 0;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+  }
+  .article-cta div h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem;
+  }
+  .article-cta div p { color: rgba(255,255,255,0.5); font-size: 0.87rem; margin: 0; }
+  .cta-btn {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 1.8rem; border-radius: 2px; text-decoration: none;
+    font-weight: 500; font-size: 0.88rem; white-space: nowrap;
+    transition: background 0.2s; flex-shrink: 0;
+  }
+  .cta-btn:hover { background: var(--gold-light); }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.85rem; color: var(--gold); text-decoration: none;
+    margin-bottom: 2rem; letter-spacing: 0.04em; transition: gap 0.2s;
+  }
+  .back-link:hover { gap: 0.8rem; }
+
+  /* FOOTER */
+  footer { background: var(--navy); padding: 3.5rem 5% 2rem; color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  .footer-inner {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem;
+    max-width: 1200px; margin: 0 auto; padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand p { margin-top: 1rem; line-height: 1.7; color: rgba(255,255,255,0.4); font-size: 0.84rem; }
+  .footer-col h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.5rem; }
+  .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--gold); }
+  .footer-bottom { text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.25); max-width: 1200px; margin: 1.8rem auto 0; }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .changes-grid { grid-template-columns: 1fr; }
+    .article-cta { flex-direction: column; align-items: flex-start; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="../index.html" class="logo"><img src="logo.png" alt="Logo" width="64">
+  <ul class="nav-links">
+    <li><a href="../index.html#o-nas">O nas</a></li>
+    <li><a href="../index.html#uslugi">Usługi</a></li>
+    <li><a href="../index.html#dlaczego">Dlaczego my</a></li>
+    <li><a href="../index.html#budynki">Nasze budynki</a></li>
+    <li><a href="../index.html#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="article-hero">
+  <div class="hero-inner">
+    <span class="article-tag">Prawo · Zarządzanie</span>
+    <h1>Zmiany w przepisach dla wspólnot<br>mieszkaniowych w <em>2026</em> roku –<br>co warto monitorować?</h1>
+    <div class="article-meta">
+      <span>📅 Luty 2026</span>
+      <span>🕐 5 min czytania</span>
+      <span>✍️ AdMax Bartosz Mroziuk</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE -->
+<main class="article-wrap">
+
+  <a href="../index.html#blog" class="back-link">← Powrót do bloga</a>
+
+  <p class="lead">Planowane nowelizacje przepisów dotyczących funkcjonowania wspólnot mieszkaniowych obejmują m.in. cyfryzację procesów, większą transparentność finansową oraz doprecyzowanie zasad odpowiedzialności zarządu. Choć część rozwiązań jest wciąż na etapie projektów legislacyjnych, warto śledzić kierunek zmian i przygotować się na ich wdrożenie.</p>
+
+  <div class="note-box">
+    Część opisanych poniżej zmian jest na etapie projektów legislacyjnych. Stan prac może się różnić – przed podjęciem decyzji organizacyjnych zalecamy weryfikację aktualnego statusu przepisów lub konsultację z prawnikiem.
+  </div>
+
+  <h2>Możliwe kierunki zmian w 2026 roku</h2>
+  <p>Prace legislacyjne dotyczące wspólnot mieszkaniowych skupiają się wokół czterech głównych obszarów. Każdy z nich może mieć istotny wpływ na codzienne funkcjonowanie zarządu i relacje z właścicielami lokali.</p>
+
+  <div class="changes-grid">
+    <div class="change-card">
+      <div class="change-num">01</div>
+      <h3>Głosowania zdalne</h3>
+      <p>Coraz częściej dopuszcza się podejmowanie uchwał przy wykorzystaniu środków komunikacji elektronicznej. Zmiana zwiększa frekwencję i przyspiesza proces decyzyjny – szczególnie w budynkach z dużą liczbą lokali.</p>
+    </div>
+    <div class="change-card">
+      <div class="change-num">02</div>
+      <h3>Transparentność finansowa</h3>
+      <p>Właściciele lokali mają mieć łatwiejszy dostęp do dokumentów finansowych wspólnoty – w tym rozliczeń rocznych, faktur i zawartych umów z wykonawcami i dostawcami.</p>
+    </div>
+    <div class="change-card">
+      <div class="change-num">03</div>
+      <h3>Fundusz remontowy</h3>
+      <p>Planowane doprecyzowanie zasad tworzenia i wydatkowania funduszu ma ograniczyć spory wewnętrzne dotyczące przeznaczenia zgromadzonych środków i sposobu ich rozliczania.</p>
+    </div>
+    <div class="change-card">
+      <div class="change-num">04</div>
+      <h3>Odpowiedzialność zarządu</h3>
+      <p>Nowe przepisy mogą precyzować zakres odpowiedzialności członków zarządu za szkody wynikające z zaniedbań w zarządzaniu nieruchomością wspólną.</p>
+    </div>
+  </div>
+
+  <h2>Co powinna zrobić wspólnota już teraz?</h2>
+  <p>Nawet jeśli przepisy nie weszły jeszcze w życie, proaktywne działanie pozwala uniknąć chaosu wdrożeniowego. Oto praktyczna lista kroków dla zarządów i administratorów:</p>
+
+  <ul class="checklist">
+    <li><span><strong>Monitorować projekty ustaw</strong> – śledzić Rządowe Centrum Legislacji i branżowe serwisy prawne poświęcone nieruchomościom.</span></li>
+    <li><span><strong>Aktualizować regulaminy</strong> wspólnoty z wyprzedzeniem, tak aby ich treść była zgodna z nowymi wymogami od razu po wejściu przepisów w życie.</span></li>
+    <li><span><strong>Wdrażać narzędzia cyfrowe</strong> do komunikacji z mieszkańcami – platformy do głosowań online, udostępniania dokumentów i zbierania zgłoszeń.</span></li>
+    <li><span><strong>Konsultować zmiany z zarządcą lub prawnikiem</strong> specjalizującym się w prawie nieruchomości – szczególnie w zakresie odpowiedzialności zarządu.</span></li>
+  </ul>
+
+  <div class="summary-block">
+    <h3>Największe wyzwanie to nie zmiana przepisów, lecz ich wdrożenie</h3>
+    <p>W praktyce zarządy wspólnot rzadko napotykają trudności na etapie samego uchwalenia nowych regulacji. Prawdziwe wyzwanie pojawia się przy implementacji – gdy trzeba zmienić procedury, przyzwyczajenia i narzędzia, którymi wspólnota posługuje się od lat. Dlatego warto zacząć przygotowania wcześniej, zanim presja czasowa wymusi działanie w pośpiechu.</p>
+  </div>
+
+  <div class="info-box">
+    <p><strong>Cyfryzacja jako szansa, nie zagrożenie.</strong></p>
+    <p>Głosowania elektroniczne i cyfrowy dostęp do dokumentów finansowych to rozwiązania, które wspólnoty mogą wdrażać niezależnie od stanu prac legislacyjnych. Większość z nich nie wymaga zmiany prawa – wystarczy uchwała wspólnoty i odpowiednie narzędzie IT. Efektem jest lepsza komunikacja, mniej nieporozumień i wyższa frekwencja na głosowaniach.</p>
+  </div>
+
+  <div class="article-cta">
+    <div>
+      <h3>Potrzebujesz wsparcia w dostosowaniu wspólnoty do nowych przepisów?</h3>
+      <p>Pomagamy zarządom w bieżącym śledzeniu zmian i ich praktycznym wdrożeniu.</p>
+    </div>
+    <a href="../index.html#kontakt" class="cta-btn">Porozmawiajmy →</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../index.html" class="logo"><img src="logo.png" alt="Logo" width="64">
+      <p>Profesjonalne administrowanie nieruchomościami z wieloletnim doświadczeniem i indywidualnym podejściem do każdego klienta.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Usługi</h4>
+      <ul>
+        <li><a href="../index.html#uslugi">Wspólnoty mieszkaniowe</a></li>
+        <li><a href="../index.html#uslugi">Nadzór techniczny</a></li>
+        <li><a href="../index.html#uslugi">Obsługa finansowa</a></li>
+        <li><a href="../index.html#uslugi">Lokalne działanie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Firma</h4>
+      <ul>
+        <li><a href="../index.html#o-nas">O nas</a></li>
+        <li><a href="../index.html#dlaczego">Dlaczego AdMax</a></li>
+        <li><a href="../index.html#budynki">Nasze budynki</a></li>
+        <li><a href="../index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48530028993">+48 530 028 993</a></li>
+        <li><a href="mailto:biuro@admaxbm.com">biuro@admaxbm.com</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100057857011231" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AdMax Bartosz Mroziuk. Wszelkie prawa zastrzeżone. | <a href="../polityka-prywatnosci.html">Polityka prywatności</a></p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').style.padding = window.scrollY > 60 ? '0.7rem 5%' : '1.2rem 5%';
+  });
+</script>
+
+</body>
+</html>
