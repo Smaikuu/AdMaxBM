@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog o Zarządzaniu Nieruchomościami Warszawa | AdMax Bartosz Mroziuk</title>
+  <meta name="description" content="Praktyczne porady, przepisy i aktualności dla właścicieli nieruchomości i zarządów wspólnot mieszkaniowych w Warszawie. Ekspert: AdMax Bartosz Mroziuk – 13 lat doświadczenia na Mokotowie." />
+  <meta name="keywords" content="zarządzanie nieruchomościami Warszawa, wspólnota mieszkaniowa, administrator nieruchomości Mokotów, blog nieruchomości, fundusz remontowy, zebranie wspólnoty" />
+  <meta name="author" content="AdMax Bartosz Mroziuk" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://admaxbm.pl/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog AdMax – Zarządzanie Nieruchomościami Warszawa" />
+  <meta property="og:description" content="Praktyczne porady dla wspólnot mieszkaniowych i właścicieli nieruchomości w Warszawie. Aktualności, przepisy, porady eksperta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://admaxbm.pl/blog/" />
+  <meta property="og:locale" content="pl_PL" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog AdMax – Zarządzanie Nieruchomościami",
+    "description": "Praktyczne porady i aktualności dla wspólnot mieszkaniowych w Warszawie",
+    "url": "https://admaxbm.pl/blog/",
+    "publisher": {
+      "@type": "LocalBusiness",
+      "name": "AdMax Bartosz Mroziuk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Czerniakowska 71/313",
+        "addressLocality": "Warszawa",
+        "postalCode": "00-735",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48530028993"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0f1f3d;
+      --navy-mid: #1a3260;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --text: #1c1c1c;
+      --text-muted: #6b6b6b;
+      --border: #e0d9cc;
+      --card-bg: #faf8f4;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15, 31, 61, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-mark {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 16px;
+    }
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .nav-logo-sub { font-size: 10px; color: var(--gold); font-family: 'DM Sans', sans-serif; font-weight: 400; letter-spacing: 0.05em; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      margin-top: 64px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 80px 2rem 90px;
+      text-align: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% 120%, rgba(201,168,76,0.12) 0%, transparent 70%);
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .hero-desc {
+      color: rgba(255,255,255,0.65);
+      font-size: 17px;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 32px;
+    }
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+    .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.05em; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-section {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 64px;
+      z-index: 50;
+    }
+    .filter-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .filter-tab {
+      padding: 16px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .filter-tab:hover { color: var(--navy); }
+    .filter-tab.active {
+      color: var(--navy);
+      border-bottom-color: var(--gold);
+      font-weight: 600;
+    }
+    .filter-count {
+      background: var(--cream);
+      color: var(--text-muted);
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 100px;
+      margin-left: 6px;
+    }
+    .search-box {
+      display: flex; align-items: center;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      gap: 8px;
+    }
+    .search-box input {
+      border: none; background: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+      width: 180px;
+    }
+    .search-box input::placeholder { color: var(--text-muted); }
+    .search-icon { color: var(--text-muted); font-size: 14px; }
+
+    /* ── FEATURED POST ── */
+    .featured-section { padding: 60px 0 0; }
+    .featured-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .featured-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 0 4px 40px rgba(15,31,61,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 60px rgba(15,31,61,0.14);
+    }
+    .featured-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+    }
+    .featured-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .featured-card:hover .featured-img img { transform: scale(1.04); }
+    .featured-badge {
+      position: absolute; top: 20px; left: 20px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 100px;
+    }
+    .featured-body {
+      padding: 48px 44px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .featured-category {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .featured-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .featured-excerpt {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .featured-meta {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 12px; color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-top: auto;
+    }
+    .featured-meta strong { color: var(--navy); }
+    .read-time {
+      margin-left: auto;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .btn-read {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s;
+      align-self: flex-start;
+      margin-bottom: 20px;
+    }
+    .btn-read:hover { background: var(--navy-mid); }
+    .btn-read-arrow { transition: transform 0.2s; }
+    .btn-read:hover .btn-read-arrow { transform: translateX(4px); }
+
+    /* ── GRID ── */
+    .posts-section { padding: 60px 0 80px; }
+    .posts-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .posts-count { font-size: 13px; color: var(--text-muted); }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .post-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 2px 16px rgba(15,31,61,0.06);
+      display: flex; flex-direction: column;
+    }
+    .post-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(15,31,61,0.12);
+    }
+    .post-img {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    .post-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .post-card:hover .post-img img { transform: scale(1.06); }
+    .post-cat {
+      position: absolute; top: 14px; left: 14px;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .cat-prawo { background: #e8f0fe; color: #1a56db; }
+    .cat-technika { background: #fef3c7; color: #92400e; }
+    .cat-finanse { background: #d1fae5; color: #065f46; }
+    .cat-wspolnota { background: #fce7f3; color: #9d174d; }
+    .cat-poradnik { background: #ede9fe; color: #5b21b6; }
+
+    .post-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .post-excerpt {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+    .post-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    .post-date { display: flex; align-items: center; gap: 4px; }
+    .post-read { font-weight: 500; color: var(--gold); }
+
+    /* ── SIDEBAR-STYLE CTA ── */
+    .cta-inline {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-inline::before {
+      content: '';
+      position: absolute;
+      bottom: -30px; right: -30px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.08);
+    }
+    .cta-inline h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .cta-inline p {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-section {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 64px 0;
+    }
+    .newsletter-inner {
+      display: flex; align-items: center; gap: 60px;
+    }
+    .newsletter-text { flex: 1; }
+    .newsletter-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .newsletter-text p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .newsletter-form { flex: 1; display: flex; gap: 10px; }
+    .newsletter-form input {
+      flex: 1;
+      padding: 13px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-form input:focus { border-color: var(--gold); }
+    .newsletter-form button {
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .newsletter-form button:hover { background: var(--navy-mid); }
+    .newsletter-privacy {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TOPICS ── */
+    .topics-section { padding: 60px 0; }
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .topic-chip {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: block;
+    }
+    .topic-chip:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(201,168,76,0.15);
+      transform: translateY(-2px);
+    }
+    .topic-emoji { font-size: 24px; display: block; margin-bottom: 8px; }
+    .topic-name { font-size: 12px; font-weight: 600; color: var(--navy); display: block; }
+    .topic-count { font-size: 11px; color: var(--text-muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 15px;
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 0;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .breadcrumb a { color: var(--navy); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb span { margin: 0 6px; color: var(--border); }
+
+    /* ── PAGINATION ── */
+    .pagination {
+      display: flex; justify-content: center; gap: 8px;
+      margin-top: 48px;
+    }
+    .page-btn {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      background: var(--white);
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .page-btn:hover { border-color: var(--navy); color: var(--navy); }
+    .page-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .page-btn.wide { width: auto; padding: 0 16px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-img { min-height: 260px; }
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+      .topics-grid { grid-template-columns: repeat(3, 1fr); }
+      .newsletter-inner { flex-direction: column; gap: 24px; }
+      .newsletter-form { width: 100%; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .posts-grid { grid-template-columns: 1fr; }
+      .topics-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-stats { gap: 1.5rem; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow { animation: fadeUp 0.5s ease both; }
+    .hero h1 { animation: fadeUp 0.5s 0.1s ease both; }
+    .hero-desc { animation: fadeUp 0.5s 0.2s ease both; }
+    .hero-stats { animation: fadeUp 0.5s 0.3s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">A</div>
+      <div>
+        <div class="nav-logo-text">AdMax</div>
+        <div class="nav-logo-sub">Bartosz Mroziuk</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#o-nas">O nas</a>
+      <a href="index.html#uslugi">Usługi</a>
+      <a href="index.html#budynki">Nasze budynki</a>
+      <a href="blog.html" style="color: var(--gold)">Blog</a>
+      <a href="index.html#kontakt" class="nav-cta">Bezpłatna konsultacja</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="index.html">Strona główna</a>
+      <span>›</span>
+      Blog
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">📰 Eksperci od zarządzania nieruchomościami</div>
+    <h1>Wiedza, która chroni<br><em>Twoją nieruchomość</em></h1>
+    <p class="hero-desc">Praktyczne porady, zmiany w przepisach i wskazówki dla zarządów wspólnot mieszkaniowych i właścicieli nieruchomości w Warszawie.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">24</div>
+        <div class="hero-stat-label">Artykuły eksperckie</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">Kategorii tematycznych</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">13+</div>
+        <div class="hero-stat-label">Lat doświadczenia</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FILTER BAR -->
+  <div class="filter-section">
+    <div class="filter-inner">
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterPosts('wszystkie', this)">Wszystkie <span class="filter-count">24</span></button>
+        <button class="filter-tab" onclick="filterPosts('prawo', this)">Prawo <span class="filter-count">7</span></button>
+        <button class="filter-tab" onclick="filterPosts('technika', this)">Technika <span class="filter-count">8</span></button>
+        <button class="filter-tab" onclick="filterPosts('finanse', this)">Finanse <span class="filter-count">4</span></button>
+        <button class="filter-tab" onclick="filterPosts('wspolnota', this)">Wspólnota <span class="filter-count">3</span></button>
+        <button class="filter-tab" onclick="filterPosts('poradnik', this)">Poradniki <span class="filter-count">2</span></button>
+      </div>
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Szukaj artykułów..." oninput="searchPosts(this.value)">
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- FEATURED -->
+    <section class="featured-section">
+      <div class="container">
+        <p class="featured-label">✦ Najnowszy artykuł</p>
+        <a href="zmiany-przepisow.html" class="featured-card" id="featured-post">
+          <div class="featured-img">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" alt="Zmiany w przepisach dla wspólnot mieszkaniowych 2026" loading="lazy">
+            <span class="featured-badge">🔥 Nowość</span>
+          </div>
+          <div class="featured-body">
+            <div class="featured-category">⚖️ Prawo</div>
+            <h2 class="featured-title">Zmiany w przepisach dla wspólnot mieszkaniowych w 2026 roku. Co warto monitorować?</h2>
+            <p class="featured-excerpt">Planowane nowelizacje obejmują m.in. cyfryzację procesów, większą transparentność finansową oraz nowe obowiązki dla zarządców. Dowiedz się, co zmieni się w Twojej wspólnocie i jak się przygotować.</p>
+            <span class="btn-read">Czytaj artykuł <span class="btn-read-arrow">→</span></span>
+            <div class="featured-meta">
+              <span><strong>Bartosz Mroziuk</strong> · Administrator</span>
+              <span class="read-time">🕐 8 min czytania</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TOPICS -->
+    <section class="topics-section">
+      <div class="container">
+        <p class="featured-label">✦ Przeglądaj według tematu</p>
+        <div class="topics-grid">
+          <a href="#" class="topic-chip" onclick="filterPosts('prawo', null)">
+            <span class="topic-emoji">⚖️</span>
+            <span class="topic-name">Prawo</span>
+            <span class="topic-count">7 artykułów</span>
+          </a>
+          <a href="#" class="topic-chip" onclick="filterPosts('technika', null)">
+            <span class="topic-emoji">🔧</span>
+            <span class="topic-name">Technika</span>
+            <span class="topic-count">8 artykułów</span>
+          </a>
+          <a href="#" class="topic-chip" onclick="filterPosts('finanse', null)">
+            <span class="topic-emoji">💰</span>
+            <span class="topic-name">Finanse</span>
+            <span class="topic-count">4 artykuły</span>
+          </a>
+          <a href="#" class="topic-chip" onclick="filterPosts('wspolnota', null)">
+            <span class="topic-emoji">🏘️</span>
+            <span class="topic-name">Wspólnota</span>
+            <span class="topic-count">3 artykuły</span>
+          </a>
+          <a href="#" class="topic-chip" onclick="filterPosts('poradnik', null)">
+            <span class="topic-emoji">📋</span>
+            <span class="topic-name">Poradniki</span>
+            <span class="topic-count">2 artykuły</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTS GRID -->
+    <section class="posts-section">
+      <div class="container">
+        <div class="posts-header">
+          <h2 class="section-title">Wszystkie artykuły</h2>
+          <span class="posts-count" id="posts-count">Wyświetlono 9 z 24 artykułów</span>
+        </div>
+        <div class="posts-grid" id="postsGrid">
+
+          <!-- POST 1 -->
+          <a href="wymiana-wodomierzy.html" class="post-card" data-category="technika" data-title="wymiana wodomierzy 2027">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Wymiana wodomierzy 2027" loading="lazy">
+              <span class="post-cat cat-technika">🔧 Technika</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Wymiana wodomierzy w 2027 roku. Co trzeba wiedzieć?</h3>
+              <p class="post-excerpt">Od 2027 roku część wspólnot będzie musiała wymienić wodomierze spełniające wymagania dyrektywy MID. Wyjaśniamy krok po kroku, co to oznacza dla Twojej wspólnoty.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 15 stycznia 2026</span>
+                <span class="post-read">6 min →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- POST 2 -->
+          <a href="ladowarka-garaz.html" class="post-card" data-category="technika" data-title="ładowarka samochód elektryczny garaż wspólnota">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=80" alt="Ładowarka elektryczna w garażu wspólnoty" loading="lazy">
+              <span class="post-cat cat-technika">🔧 Technika</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Ładowarka samochodu elektrycznego w garażu wspólnoty. Procedura krok po kroku</h3>
+              <p class="post-excerpt">Rosnąca liczba samochodów elektrycznych powoduje coraz więcej pytań o montaż ładowarki w garażu podziemnym. Tłumaczymy całą procedurę uchwały i instalacji.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 8 stycznia 2026</span>
+                <span class="post-read">5 min →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- POST 3 -->
+          <a href="ile-kosztuje-zarzadzanie.html" class="post-card" data-category="finanse" data-title="koszt zarządzanie wspólnota mieszkaniowa Warszawa cena">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Koszt zarządzania wspólnotą" loading="lazy">
+              <span class="post-cat cat-finanse">💰 Finanse</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Ile kosztuje zarządzanie wspólnotą mieszkaniową w Warszawie? (2026)</h3>
+              <p class="post-excerpt">Cennik usług administrowania nieruchomościami mocno się różni między firmami. Sprawdź, czym jest uwarunkowany i jak nie przepłacić za profesjonalną obsługę.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 2 stycznia 2026</span>
+                <span class="post-read">7 min →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- POST 4 -->
+          <a href="jak-zmienic-administratora.html" class="post-card" data-category="poradnik" data-title="jak zmienić administratora wspólnoty mieszkaniowej">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="Jak zmienić administratora wspólnoty" loading="lazy">
+              <span class="post-cat cat-poradnik">📋 Poradnik</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Jak zmienić administratora wspólnoty mieszkaniowej? Krok po kroku</h3>
+              <p class="post-excerpt">Zmiana zarządcy nieruchomości to formalny proces wymagający uchwały, wypowiedzenia umowy i przekazania dokumentacji. Oto kompletny przewodnik dla zarządu wspólnoty.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 18 grudnia 2025</span>
+                <span class="post-read">9 min →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- POST 5 -->
+          <a href="fundusz-remontowy.html" class="post-card" data-category="finanse" data-title="fundusz remontowy wspólnota ile zbierać">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Fundusz remontowy wspólnoty" loading="lazy">
+              <span class="post-cat cat-finanse">💰 Finanse</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Fundusz remontowy wspólnoty – ile zbierać i na co go przeznaczać?</h3>
+              <p class="post-excerpt">Prawidłowa wysokość funduszu remontowego to klucz do sprawnego utrzymania budynku bez nagłych, wysokich opłat. Podpowiadamy, jak go ustalić i na co zwrócić uwagę.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 5 grudnia 2025</span>
+                <span class="post-read">6 min →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- POST 6 -->
+          <a href="zebranie-wspolnoty.html" class="post-card" data-category="wspolnota" data-title="zebranie wspólnoty mieszkaniowej przepisy procedura">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80" alt="Zebranie wspólnoty mieszkaniowej" loading="lazy">
+              <span class="post-cat cat-wspolnota">🏘️ Wspólnota</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Zebranie wspólnoty mieszkaniowej – przepisy, termin, głosowanie</h3>
+              <p class="post-excerpt">Doroczne zebranie wspólnoty to obowiązek prawny. Wyjaśniamy, kiedy je zwołać, kto może głosować, jak prawidłowo podjąć uchwałę i co zrobić, gdy quorum nie zostanie osiągnięte.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 20 listopada 2025</span>
+                <span class="post-read">8 min →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- POST 7 -->
+          <a href="przeglad-techniczny.html" class="post-card" data-category="technika" data-title="przegląd techniczny budynku obowiązkowy">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=600&q=80" alt="Przegląd techniczny budynku" loading="lazy">
+              <span class="post-cat cat-technika">🔧 Technika</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Obowiązkowe przeglądy techniczne budynku – harmonogram i kary za zaniedbania</h3>
+              <p class="post-excerpt">Prawo budowlane nakłada na właścicieli budynków szereg obowiązkowych przeglądów – rocznych, pięcioletnich i kominiarskich. Sprawdź, czego nie wolno zaniedbać.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 10 listopada 2025</span>
+                <span class="post-read">5 min →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- POST 8 -->
+          <a href="podatek-od-nieruchomosci.html" class="post-card" data-category="prawo" data-title="podatek od nieruchomości 2026 stawki wspólnota">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80" alt="Podatek od nieruchomości 2026" loading="lazy">
+              <span class="post-cat cat-prawo">⚖️ Prawo</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Podatek od nieruchomości 2026 – nowe stawki w Warszawie. Co zmienia się dla wspólnot?</h3>
+              <p class="post-excerpt">Miasto Warszawa ogłosiło nowe stawki podatku od nieruchomości. Sprawdź, jak zmiana wpłynie na koszty utrzymania wspólnoty i co zrobić, by je zoptymalizować.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 28 października 2025</span>
+                <span class="post-read">4 min →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- POST 9 -->
+          <a href="ubezpieczenie-wspolnoty.html" class="post-card" data-category="poradnik" data-title="ubezpieczenie wspólnoty mieszkaniowej OC jak wybrać">
+            <div class="post-img">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Ubezpieczenie wspólnoty mieszkaniowej" loading="lazy">
+              <span class="post-cat cat-poradnik">📋 Poradnik</span>
+            </div>
+            <div class="post-body">
+              <h3 class="post-title">Ubezpieczenie wspólnoty mieszkaniowej – jak wybrać i czego nie pominąć?</h3>
+              <p class="post-excerpt">Dobra polisa to fundament bezpieczeństwa budynku. Tłumaczymy, jakie ryzyka warto objąć ubezpieczeniem, na co zwrócić uwagę w ofercie i jak negocjować stawkę.</p>
+              <div class="post-meta">
+                <span class="post-date">📅 14 października 2025</span>
+                <span class="post-read">6 min →</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- No results message -->
+        <div id="no-results" style="display:none; text-align:center; padding: 60px 20px;">
+          <div style="font-size: 48px; margin-bottom: 16px;">🔍</div>
+          <h3 style="font-family: 'Playfair Display', serif; color: var(--navy); margin-bottom: 8px;">Brak wyników</h3>
+          <p style="color: var(--text-muted);">Spróbuj innej frazy lub przeglądaj wszystkie kategorie.</p>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination" id="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn wide">Następna →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="container">
+      <div class="cta-inline">
+        <h3>Masz pytania dotyczące Twojej nieruchomości?</h3>
+        <p>Skontaktuj się bezpośrednio z właścicielem firmy – Bartoszem Mrozuikiem.<br>Bezpłatna konsultacja bez zobowiązań, 13 lat doświadczenia na Mokotowie.</p>
+        <a href="index.html#kontakt" class="btn-gold">Umów bezpłatną konsultację →</a>
+      </div>
+    </div>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-inner">
+          <div class="newsletter-text">
+            <h2>Bądź na bieżąco z przepisami</h2>
+            <p>Nowe artykuły, zmiany prawne i porady dla zarządów wspólnot – prosto na Twoją skrzynkę. Bez spamu, bez reklam. Tylko to, co naprawdę ważne dla zarządcy nieruchomości.</p>
+          </div>
+          <div style="flex: 1;">
+            <div class="newsletter-form">
+              <input type="email" placeholder="Twój adres e-mail" id="emailInput">
+              <button onclick="handleSubscribe()">Zapisz się</button>
+            </div>
+            <p class="newsletter-privacy">🔒 Dane chronione zgodnie z RODO. Rezygnacja w każdej chwili.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-brand">AdMax Bartosz Mroziuk</span>
+        <span>Czerniakowska 71/313, 00-735 Warszawa · <a href="tel:+48530028993">530 028 993</a> · <a href="mailto:biuro@admaxbm.com">biuro@admaxbm.com</a></span>
+        <span>© 2026 · <a href="privace-policy.html">Polityka prywatności</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Filter by category
+    function filterPosts(category, tabEl) {
+      // Update active tab
+      if (tabEl) {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        tabEl.classList.add('active');
+      }
+
+      const cards = document.querySelectorAll('.post-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const match = category === 'wszystkie' || card.dataset.category === category;
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+      });
+
+      document.getElementById('posts-count').textContent = `Wyświetlono ${visible} artykułów`;
+      document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+      document.getElementById('pagination').style.display = category === 'wszystkie' ? 'flex' : 'none';
+
+      // Scroll to posts
+      document.querySelector('.posts-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Search
+    function searchPosts(query) {
+      const q = query.toLowerCase().trim();
+      const cards = document.querySelectorAll('.post-card');
+      let visible = 0;
+
+      // Reset filter tabs
+      if (q === '') {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        document.querySelector('.filter-tab').classList.add('active');
+      }
+
+      cards.forEach(card => {
+        const title = card.dataset.title || '';
+        const cardTitle = card.querySelector('.post-title')?.textContent.toLowerCase() || '';
+        const match = q === '' || title.includes(q) || cardTitle.includes(q);
+        card.style.display = match ? 'flex' : 'none';
+        if (match) visible++;
+      });
+
+      document.getElementById('posts-count').textContent =
+        q ? `Znaleziono ${visible} artykułów` : `Wyświetlono ${visible} z 24 artykułów`;
+      document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+      document.getElementById('pagination').style.display = q ? 'none' : 'flex';
+    }
+
+    // Newsletter
+    function handleSubscribe() {
+      const email = document.getElementById('emailInput').value;
+      if (!email || !email.includes('@')) {
+        alert('Podaj poprawny adres e-mail.');
+        return;
+      }
+      alert(`Dziękujemy! Adres ${email} został zapisany do newslettera AdMax.`);
+      document.getElementById('emailInput').value = '';
+    }
+
+    // Animate cards on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.post-card, .topic-chip').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `opacity 0.4s ${i * 0.06}s ease, transform 0.4s ${i * 0.06}s ease`;
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
