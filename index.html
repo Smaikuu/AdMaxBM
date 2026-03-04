@@ -272,7 +272,79 @@
   .about-badge .big { font-size: 2.8rem; font-weight: 700; line-height: 1; }
   .about-badge .small { font-size: 0.75rem; font-weight: 500; margin-top: 0.3rem; }
 
-  /* USLUGI */
+  /* PARTNERZY */
+  .partners { background: var(--navy); padding: 4rem 5%; position: relative; overflow: hidden; }
+  .partners::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 100% 50%, rgba(201,168,76,0.05) 0%, transparent 60%);
+  }
+  .partners-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .partners-header { text-align: center; margin-bottom: 2.8rem; }
+  .partners-header p { color: rgba(255,255,255,0.75); margin-top: 0.7rem; font-size: 0.93rem; }
+  .partners-grid {
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch;
+    gap: 1.5rem; max-width: 900px; margin: 0 auto;
+  }
+  .partner-card {
+    background: #243c6b;
+    border-radius: 4px;
+    border: 1px solid rgba(201,168,76,0.7);
+    width: 220px;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  }
+  .partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+    border-color: var(--gold);
+  }
+  .partner-img-wrap {
+    width: 100%; height: 140px;
+    overflow: hidden; position: relative;
+    background: #1a2e50;
+  }
+  .partner-img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.4s;
+    opacity: 0.9;
+  }
+  .partner-card:hover .partner-img { transform: scale(1.05); opacity: 1; }
+  .partner-body {
+    padding: 1.2rem 1.1rem 1.4rem;
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+  }
+  .partner-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 600; color: var(--white);
+    margin-bottom: 0.25rem;
+    min-height: 3rem; display: flex; align-items: center; justify-content: center;
+  }
+  .partner-specialty {
+    font-size: 0.68rem; color: #e2c87e;
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.7rem;
+    min-height: 2rem; display: flex; align-items: center; justify-content: center;
+  }
+  .partner-desc {
+    font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.55;
+    flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    min-height: 3.5rem;
+  }
+  .partner-link {
+    display: inline-block; margin-top: 1rem;
+    font-size: 0.75rem; color: #e2c87e;
+    border: 1px solid rgba(226,200,126,0.6);
+    padding: 0.3rem 0.8rem; border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .partner-card:hover .partner-link {
+    background: var(--gold); color: var(--navy);
+  }
+
   .services { background: var(--cream); }
   .services-header { text-align: center; max-width: 600px; margin: 0 auto 3.5rem; }
   .services-header p { color: var(--gray); margin-top: 1rem; line-height: 1.7; }
@@ -368,6 +440,40 @@
   }
   .step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
   .step p { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+
+  /* MAPA */
+  .map-section { background: var(--navy); padding: 5.5rem 5%; }
+  .map-inner { max-width: 1200px; margin: 0 auto; }
+  .map-header { text-align: center; margin-bottom: 2.5rem; }
+  .map-header .section-title { color: var(--white); }
+  .map-header p { color: rgba(255,255,255,0.6); margin-top: 0.8rem; font-size: 0.97rem; }
+  .map-frame-wrap {
+    border-radius: 3px; overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.2);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.07);
+    position: relative;
+  }
+  .map-frame-wrap iframe {
+    display: block; width: 100%; height: 420px; border: none;
+  }
+  .map-cta-strip {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+    gap: 1rem; padding: 1.2rem 1.8rem;
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-top: none; border-radius: 0 0 3px 3px;
+  }
+  .map-address { font-size: 0.9rem; color: rgba(255,255,255,0.55); }
+  .map-address strong { color: var(--white); display: block; margin-bottom: 0.15rem; font-size: 0.95rem; }
+  .map-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--gold); color: var(--navy);
+    padding: 0.65rem 1.4rem; border-radius: 2px; text-decoration: none;
+    font-size: 0.85rem; font-weight: 500; white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .map-link:hover { background: var(--gold-light); }
+
 
   /* KONTAKT */
   .contact { background: var(--cream); }
@@ -573,6 +679,59 @@
   </div>
 </section>
 
+<!-- PARTNERZY -->
+<section class="partners">
+  <div class="partners-inner">
+    <div class="partners-header reveal">
+      <span class="section-label" style="color: var(--gold)">Zaufani współpracownicy</span>
+      <h2 class="section-title section-title-white">Nasi partnerzy</h2>
+      <p>Współpracujemy ze sprawdzonymi firmami, które wspierają nas w kompleksowej obsłudze nieruchomości.</p>
+    </div>
+    <div class="partners-grid">
+
+      <a href="https://www.oferteo.pl/amperix/firma/5895979" target="_blank" rel="noopener" class="partner-card reveal">
+        <div class="partner-img-wrap">
+          <img class="partner-img" src="https://static.oferteo.pl/images/portfolio/5895979/256px_s/1749556923772-1749556922905_avatar.jpg" alt="Amperix – instalacje elektryczne">
+        </div>
+        <div class="partner-body">
+          <div class="partner-name">Amperix Michał Baraniecki</div>
+          <div class="partner-specialty">Elektryk</div>
+          <div class="partner-desc"><b>Michał Baraniecki</b>
+	  <br>Kontakt: 796 091 690 </div>
+          <span class="partner-link">Przejdź do strony  →</span>
+        </div>
+      </a>
+
+      <a href="https://bartnicki.info/" target="_blank" rel="noopener" class="partner-card reveal">
+        <div class="partner-img-wrap">
+          <img class="partner-img" src="https://zapodaj.net/images/0f620b0e7da3d.png" alt="Bartnicki - instalacje gazowe i sanitarne">
+        </div>
+        <div class="partner-body">
+          <div class="partner-name">Bartnicki sp. z o.o</div>
+          <div class="partner-specialty">Instalacje gazowe i sanitarne</div>
+          <div class="partner-desc"><b>Marcin Bartnicki</b>
+	  <br>Kontakt: 228 580 012</div>
+          <span class="partner-link">Przejdź do strony  →</span>
+        </div>
+      </a>
+
+      <a href="https://www.oferteo.pl/uslugi-hydrauliczne-jacek-przyczka/firma/2157503" target="_blank" rel="noopener" class="partner-card reveal">
+        <div class="partner-img-wrap">
+          <img class="partner-img" src="https://images.pexels.com/photos/4494656/pexels-photo-4494656.jpeg" alt="Jacek Przyczka - usługi hydrauliczne">
+        </div>
+        <div class="partner-body">
+          <div class="partner-name">Jacek Przyczka</div>
+          <div class="partner-specialty">Hydraulik</div>
+          <div class="partner-desc"><b>Jacek Przyczka</b>
+	  <br>Kontakt: 507 018 929</div>
+          <span class="partner-link">Przejdź do strony →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- USŁUGI -->
 <section class="services" id="uslugi">
   <div class="services-header reveal">
@@ -734,6 +893,35 @@
         <div class="step-num">4</div>
         <h4>Bieżące zarządzanie</h4>
         <p>Zapewniamy ciągłą opiekę, raportowanie i dostępność – nieruchomość działa sprawnie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="map-section">
+  <div class="map-inner">
+    <div class="map-header reveal">
+      <span class="section-label">Lokalizacja</span>
+      <h2 class="section-title">Znajdź nas na mapie</h2>
+      <p>Działamy lokalnie w Warszawie – znamy specyfikę każdej dzielnicy i jesteśmy blisko naszych klientów.</p>
+    </div>
+    <div class="map-frame-wrap reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862.5868534304188!2d21.046529375569975!3d52.20264545967846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47192d70f6fabf95%3A0xd487d7c4593252b8!2sAdMax%20Bartosz%20Mroziuk%20Zarz%C4%85dzanie%20i%20administrowanie%20nieruchomo%C5%9Bciami!5e1!3m2!1spl!2spl!4v1772615323297!5m2!1spl!2spl"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Lokalizacja AdMax Bartosz Mroziuk na mapie">
+      </iframe>
+      <div class="map-cta-strip">
+        <div class="map-address">
+          <strong>AdMax Bartosz Mroziuk</strong>
+          Czerniakowska 71/313, 00-735 Warszawa
+        </div>
+        <a href="https://maps.app.goo.gl/bnYAw3NovFDsLU6i9" target="_blank" rel="noopener" class="map-link">
+          📍 Otwórz w Google Maps
+        </a>
       </div>
     </div>
   </div>
