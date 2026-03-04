@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundusz remontowy wspólnoty mieszkaniowej – jak go dobrze zaplanować?</title>
+<meta name="description" content="Jak ustalić wysokość funduszu remontowego? Jak uniknąć nagłych dopłat i zaplanować remonty z wyprzedzeniem? Praktyczny poradnik dla zarządów wspólnot.">
+<meta name="keywords" content="fundusz remontowy wspólnota mieszkaniowa, wysokość funduszu remontowego, plan remontów wspólnota, zaliczka na fundusz remontowy, zarządzanie nieruchomościami Warszawa">
+<meta name="author" content="Bartosz Mroziuk – AdMax">
+<link rel="canonical" href="https://admaxbm.pl/fundusz-remontowy-wspolnota.html">
+<link rel="icon" type="image/png" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fundusz remontowy wspólnoty mieszkaniowej – jak go dobrze zaplanować?",
+  "description": "Jak ustalić wysokość funduszu remontowego i zaplanować remonty z wyprzedzeniem – poradnik dla zarządów wspólnot mieszkaniowych.",
+  "datePublished": "2026-02-01",
+  "author": { "@type": "Person", "name": "Bartosz Mroziuk" },
+  "publisher": { "@type": "Organization", "name": "AdMax Bartosz Mroziuk", "url": "https://admaxbm.pl" }
+}
+</script>
+
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --navy-mid: #162a52;
+    --gold: #c9a84c;
+    --gold-light: #e2c87e;
+    --cream: #f8f4ee;
+    --white: #ffffff;
+    --gray: #6b7280;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--cream); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(15, 31, 61, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 0 2rem; height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-text { font-family: 'Cormorant Garamond', serif; color: var(--white); font-size: 15px; font-weight: 600; line-height: 1.2; }
+  .nav-logo-sub { font-size: 10px; color: var(--gold); font-family: 'DM Sans', sans-serif; font-weight: 400; letter-spacing: 0.05em; }
+  .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: var(--gold) !important; color: var(--navy) !important; padding: 8px 20px; border-radius: 6px; font-weight: 600 !important; font-size: 13px !important; }
+
+  /* HERO */
+  .article-hero {
+    padding: 9rem 5% 5rem;
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  .article-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(201,168,76,0.07) 0%, transparent 60%);
+  }
+  .article-hero::after {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; animation: fadeUp 0.9s ease both; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .article-tag {
+    display: inline-block; margin-bottom: 1.2rem;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.35rem 1rem; border-radius: 2px;
+  }
+  .article-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 600; line-height: 1.15;
+    color: var(--white); margin-bottom: 1rem;
+  }
+  .article-hero h1 em { color: var(--gold); font-style: normal; }
+  .article-meta {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+    font-size: 0.82rem; color: rgba(255,255,255,0.4);
+    margin-top: 1.5rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ARTICLE */
+  .article-wrap { max-width: 800px; margin: 0 auto; padding: 4rem 5% 6rem; }
+
+  .lead {
+    font-size: 1.05rem; line-height: 1.85; color: var(--navy);
+    border-left: 3px solid var(--gold); padding-left: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .article-wrap h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem; font-weight: 600; color: var(--navy);
+    margin: 2.8rem 0 1rem;
+  }
+  .article-wrap p { font-size: 0.97rem; line-height: 1.85; color: #374151; margin-bottom: 1.2rem; }
+  .article-wrap ul { margin: 0.5rem 0 1.4rem 1.4rem; }
+  .article-wrap li { font-size: 0.97rem; line-height: 1.75; color: #374151; margin-bottom: 0.5rem; padding-left: 0.3rem; }
+  .article-wrap ul li::marker { color: var(--gold); }
+
+  /* Steps list */
+  .steps-list { list-style: none; margin: 1rem 0 1.8rem; }
+  .steps-list li {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+    padding: 1.1rem 0; border-bottom: 1px solid rgba(201,168,76,0.12);
+  }
+  .steps-list li:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 700; color: var(--gold);
+    line-height: 1; min-width: 1.8rem; flex-shrink: 0;
+  }
+  .step-text { font-size: 0.97rem; line-height: 1.7; color: #374151; padding-top: 0.15rem; }
+  .step-text strong { color: var(--navy); }
+
+  /* Info box */
+  .info-box {
+    background: var(--white); border: 1px solid rgba(201,168,76,0.2);
+    border-left: 4px solid var(--gold); border-radius: 2px; padding: 1.3rem 1.7rem; margin: 1.8rem 0;
+  }
+  .info-box p { margin: 0; font-size: 0.93rem; color: #374151; }
+  .info-box p + p { margin-top: 0.5rem; }
+
+  /* Note box */
+  .note-box {
+    background: #f9f6f0; border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 2px; padding: 1.1rem 1.5rem; margin: 1.5rem 0;
+    font-size: 0.87rem; color: var(--gray); line-height: 1.65;
+  }
+  .note-box::before { content: '💡 Wskazówka: '; font-weight: 600; color: #a07820; }
+
+  /* Problems grid */
+  .problems-grid { display: grid; grid-template-columns: 1fr; gap: 0.8rem; margin: 1.2rem 0 1.8rem; }
+  .problem-item {
+    background: var(--white); border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 2px; padding: 1.1rem 1.5rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .problem-icon {
+    width: 36px; height: 36px; background: rgba(201,168,76,0.1);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .problem-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .problem-item p { font-size: 0.87rem; color: var(--gray); margin: 0; line-height: 1.55; }
+
+  /* Doc list */
+  .doc-list { list-style: none; margin: 1rem 0 1.8rem; }
+  .doc-list li {
+    display: flex; gap: 0.9rem; align-items: flex-start;
+    padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.1);
+    font-size: 0.95rem; color: #374151; line-height: 1.6;
+  }
+  .doc-list li:last-child { border-bottom: none; }
+  .doc-list li::before {
+    content: '✓';
+    color: var(--gold); font-weight: 700; font-size: 1rem;
+    flex-shrink: 0; margin-top: 0.05rem;
+  }
+
+  /* Cost example box */
+  .example-box {
+    background: var(--navy); border-radius: 3px;
+    padding: 1.8rem 2rem; margin: 1.8rem 0;
+  }
+  .example-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 600; color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+  .example-box p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin: 0; }
+  .example-box strong { color: var(--white); }
+
+  /* CTA */
+  .article-cta {
+    background: var(--navy); border-radius: 3px;
+    padding: 2.2rem 2.5rem; margin: 3rem 0;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 2rem; flex-wrap: wrap;
+  }
+  .article-cta div h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+  .article-cta div p { color: rgba(255,255,255,0.5); font-size: 0.87rem; margin: 0; }
+  .cta-btn {
+    background: var(--gold); color: var(--navy);
+    padding: 0.85rem 1.8rem; border-radius: 2px; text-decoration: none;
+    font-weight: 500; font-size: 0.88rem; white-space: nowrap;
+    transition: background 0.2s; flex-shrink: 0;
+  }
+  .cta-btn:hover { background: var(--gold-light); }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.85rem; color: var(--gold); text-decoration: none;
+    margin-bottom: 2rem; letter-spacing: 0.04em; transition: gap 0.2s;
+  }
+  .back-link:hover { gap: 0.8rem; }
+
+  /* FOOTER */
+  footer { background: var(--navy); padding: 3.5rem 5% 2rem; color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  .footer-inner {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem;
+    max-width: 1200px; margin: 0 auto; padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand p { margin-top: 1rem; line-height: 1.7; color: rgba(255,255,255,0.4); font-size: 0.84rem; }
+  .footer-col h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.5rem; }
+  .footer-col ul a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul a:hover { color: var(--gold); }
+  .footer-bottom { text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.25); max-width: 1200px; margin: 1.8rem auto 0; }
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    .nav-links { display: none; }
+    .article-cta { flex-direction: column; align-items: flex-start; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Logo" width="84">
+    <div>
+      <div class="nav-logo-text">AdMax</div>
+      <div class="nav-logo-sub">Bartosz Mroziuk</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#o-nas">O nas</a></li>
+    <li><a href="index.html#uslugi">Usługi</a></li>
+    <li><a href="index.html#dlaczego">Dlaczego my</a></li>
+    <li><a href="index.html#budynki">Nasze budynki</a></li>
+    <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="article-hero">
+  <div class="hero-inner">
+    <span class="article-tag">Finanse</span>
+    <h1>Fundusz remontowy<br>wspólnoty mieszkaniowej –<br><em>jak go dobrze zaplanować?</em></h1>
+    <div class="article-meta">
+      <span>📅 luty 2026</span>
+      <span>🕐 6 min. czytania</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE -->
+<main class="article-wrap">
+
+  <a href="blog.html" class="back-link">← Powrót do bloga</a>
+
+  <p class="lead">Fundusz remontowy to środki, które właściciele lokali odkładają na większe prace w budynku. Z tych pieniędzy finansuje się m.in. remont dachu, naprawę elewacji, modernizację instalacji czy odnowienie klatki schodowej. W praktyce jest to sposób na stopniowe przygotowanie się do kosztów, które prędzej czy później pojawiają się w każdej nieruchomości.</p>
+
+  <h2>Kiedy fundusz remontowy staje się problemem?</h2>
+  <p>Największy problem pojawia się wtedy, gdy fundusz jest zbyt niski. Wystarczy poważniejsza awaria lub konieczność pilnego remontu, aby wspólnota musiała zebrać dużą kwotę w krótkim czasie.</p>
+
+  <div class="problems-grid">
+    <div class="problem-item">
+      <div class="problem-icon">📉</div>
+      <div>
+        <h4>Zbyt niski fundusz</h4>
+        <p>Dla mieszkańców oznacza jednorazowe dopłaty, często sięgające kilku tysięcy złotych na lokal – i to w sytuacji kryzysowej, gdy nie ma czasu na przygotowanie.</p>
+      </div>
+    </div>
+    <div class="problem-item">
+      <div class="problem-icon">📈</div>
+      <div>
+        <h4>Zbyt wysoka składka</h4>
+        <p>Może budzić wątpliwości właścicieli, szczególnie gdy przez dłuższy czas nie widać większych prac remontowych. Brak komunikacji o planie remontu podważa zaufanie do zarządu.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>Dlatego wysokość funduszu remontowego powinna wynikać przede wszystkim ze <strong>stanu technicznego budynku</strong> oraz planowanych prac w najbliższych latach – nie z arbitralnych decyzji zarządu ani porównania z sąsiednią wspólnotą.</p>
+
+  <h2>Jak dopasować składkę do potrzeb budynku?</h2>
+  <p>Nie ma jednej prawidłowej wysokości składki obowiązującej wszystkich. Kluczowe są dwa czynniki:</p>
+
+  <ul class="steps-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Wiek i stan techniczny budynku</strong> – w starszych nieruchomościach, gdzie instalacje mają kilkadziesiąt lat, a elewacja wymaga odnowienia, składka zwykle musi być wyższa. W nowszych budynkach fundusz może być niższy, ale nadal powinien zabezpieczać przyszłe wydatki.</div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>Plan remontów na najbliższe lata</strong> – zarząd lub administrator określa najważniejsze prace, ich przybliżony koszt i orientacyjny termin realizacji. To fundament każdej racjonalnej decyzji o wysokości składki.</div>
+    </li>
+  </ul>
+
+  <h2>Wieloletni plan remontów – dlaczego warto go mieć?</h2>
+  <p>Pomocnym narzędziem jest kilkuletni plan remontów. Pozwala on rozłożyć koszty dużych inwestycji na regularne, przewidywalne wpłaty właścicieli – zamiast zbierać całą kwotę tuż przed rozpoczęciem prac.</p>
+
+  <div class="example-box">
+    <h4>Przykład praktyczny</h4>
+    <p>Jeśli w ciągu 5 lat wspólnota planuje <strong>remont dachu za około 200 000 zł</strong>, wystarczy zabezpieczać <strong>40 000 zł rocznie</strong>. W budynku z 20 lokalami to zaledwie 2 000 zł na lokal rocznie – czyli około 167 zł miesięcznie. Bez planu ta sama kwota musi pojawić się nagle, w całości, w momencie gdy dach zaczyna przeciekać.</p>
+  </div>
+
+  <h2>Na co fundusz remontowy może być wydatkowany?</h2>
+  <p>W praktyce fundusz remontowy powinien pokrywać zarówno większe inwestycje, jak i nieprzewidziane naprawy części wspólnych budynku:</p>
+
+  <ul class="doc-list">
+    <li>remont lub wymiana dachu i pokrycia dachowego</li>
+    <li>naprawa lub odświeżenie elewacji budynku</li>
+    <li>remonty balkonów i tarasów</li>
+    <li>naprawy instalacji wodnej, kanalizacyjnej lub elektrycznej</li>
+    <li>wymiana drzwi wejściowych i domofonów</li>
+    <li>modernizacja lub remont windy</li>
+    <li>ocieplenie budynku i termomodernizacja</li>
+    <li>odnowienie klatek schodowych i części wspólnych</li>
+  </ul>
+
+  <div class="note-box">
+    Środki z funduszu remontowego mogą być wydatkowane wyłącznie na nieruchomość wspólną – nie na remont lokali prywatnych właścicieli. Warto to wyraźnie komunikować mieszkańcom, by uniknąć nieporozumień.
+  </div>
+
+  <h2>Dobrze zaplanowany fundusz – korzyści dla całej wspólnoty</h2>
+  <p>Dobrze zaplanowany fundusz remontowy pozwala wspólnocie działać spokojniej i bardziej przewidywalnie. Zamiast reagować dopiero wtedy, gdy pojawi się problem techniczny, mieszkańcy stopniowo odkładają środki na przyszłe prace.</p>
+
+  <div class="info-box">
+    <p><strong>Trzy główne korzyści właściwie prowadzonego funduszu:</strong></p>
+    <p>budynek jest utrzymany w dobrym stanie technicznym, koszty rozkładają się równomiernie w czasie, a zarząd ma realną podstawę do planowania – zamiast gaszenia kolejnych pożarów.</p>
+  </div>
+
+  <p>Wspólnoty, które regularnie aktualizują plan remontów i odpowiednio dobierają wysokość składki, znacznie rzadziej mierzą się z nagłymi dopłatami, konfliktami między właścicielami i problemami technicznymi, które eskalują przez lata zaniedbań.</p>
+
+  <div class="article-cta">
+    <div>
+      <h3>Potrzebujesz pomocy z planem remontowym wspólnoty?</h3>
+      <p>Pomożemy ocenić stan techniczny budynku i zaplanować fundusz remontowy na kolejne lata.</p>
+    </div>
+    <a href="index.html#kontakt" class="cta-btn">Skontaktuj się z nami →</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html"><img src="logo.png" alt="Logo" width="64"></a>
+      <p>Profesjonalne administrowanie nieruchomościami z wieloletnim doświadczeniem i indywidualnym podejściem do każdego klienta.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Usługi</h4>
+      <ul>
+        <li><a href="index.html#uslugi">Wspólnoty mieszkaniowe</a></li>
+        <li><a href="index.html#uslugi">Nadzór techniczny</a></li>
+        <li><a href="index.html#uslugi">Obsługa finansowa</a></li>
+        <li><a href="index.html#uslugi">Lokalne działanie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Firma</h4>
+      <ul>
+        <li><a href="index.html#o-nas">O nas</a></li>
+        <li><a href="index.html#dlaczego">Dlaczego AdMax</a></li>
+        <li><a href="index.html#budynki">Nasze budynki</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+48530028993">+48 530 028 993</a></li>
+        <li><a href="mailto:biuro@admaxbm.com">biuro@admaxbm.com</a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100057857011231" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AdMax Bartosz Mroziuk. Wszelkie prawa zastrzeżone. | <a href="polityka-prywatnosci.html">Polityka prywatności</a></p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').style.padding = window.scrollY > 60 ? '0.7rem 5%' : '1.2rem 5%';
+  });
+</script>
+
+</body>
+</html>
