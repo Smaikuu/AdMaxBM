@@ -409,10 +409,54 @@
   .buildings { background: var(--cream); }
   .buildings-header { text-align: center; max-width: 600px; margin: 0 auto 3.5rem; }
   .buildings-header p { color: var(--gray); margin-top: 1rem; line-height: 1.7; }
-  .buildings-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem; max-width: 1200px; margin: 0 auto;
-  }
+  
+.buildings-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.buildings-grid > .building-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.buildings-grid .building-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.buildings-grid .building-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.buildings-grid .building-tag {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+@media (max-width: 900px) {
+    .buildings-grid > .building-card {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .buildings-grid > .building-card {
+        flex-basis: 100%;
+    }
+}
+
   .building-card {
     background: var(--white); border-radius: 3px; overflow: hidden;
     border: 1px solid rgba(201,168,76,0.15);
@@ -864,25 +908,26 @@
 
 <!-- NASZE BUDYNKI -->
 <section class="buildings" id="budynki">
-  
+
   <div class="buildings-header reveal">
     <span class="section-label">Nasze budynki</span>
     <h2 class="section-title">Twoja nieruchomość w pewnych rękach</h2>
     <p>
-      Obsługujemy starannie wybrane nieruchomości na Mokotowie – 
-      znamy je doskonale i dbamy o nie z pełnym zaangażowaniem.
+      Obsługujemy starannie wybrane nieruchomości
+      w Warszawie – znamy je doskonale
+      i dbamy o nie z pełnym zaangażowaniem.
     </p>
   </div>
 
   <div class="buildings-grid">
 
+    <!-- DOLNA 12 -->
     <div class="building-card reveal">
       <div class="building-img-wrap">
         <img class="building-img"
           src="https://www.warszawa1939.pl/sites/default/files/styles/full/public/media_uploaded/obiekty/dolna/dolna_12_01.jpg?itok=myRdlQk"
           alt="Dolna 12">
       </div>
-
       <div class="building-info">
         <div class="building-address">Dolna 12</div>
         <div class="building-desc">
@@ -892,13 +937,13 @@
       </div>
     </div>
 
+    <!-- PUŁAWSKA 49 -->
     <div class="building-card reveal">
       <div class="building-img-wrap">
         <img class="building-img"
           src="https://www.warszawa1939.pl/sites/default/files/styles/full/public/media_uploaded/obiekty/pulawska/pulawska_49_02.jpg?itok=lOxH_yTF"
           alt="Puławska 49">
       </div>
-
       <div class="building-info">
         <div class="building-address">Puławska 49</div>
         <div class="building-desc">
@@ -908,13 +953,13 @@
       </div>
     </div>
 
+    <!-- IWICKA 8A -->
     <div class="building-card reveal">
       <div class="building-img-wrap">
         <img class="building-img"
           src="https://przystanekhistoria.pl/dokumenty/zalaczniki/166/166-137977.jpg"
           alt="Iwicka 8A">
       </div>
-
       <div class="building-info">
         <div class="building-address">Iwicka 8A</div>
         <div class="building-desc">
@@ -923,39 +968,42 @@
         <span class="building-tag">Mokotów</span>
       </div>
     </div>
-<div class="building-card reveal">
-  <div class="building-img-wrap">
-    <img class="building-img"
-         src="images/szczekocinska4.jpg"
-         alt="Szczekocińska 4">
-  </div>
 
-  <div class="building-info">
-    <div class="building-address">Szczekocińska&nbsp;4</div>
-</div>
-    <div class="building-desc">
-      Przedwojenna kamienica na Starym Mokotowie.
-    </div>
-    <span class="building-tag">Mokotów</span>
-  </div>
-</div><div class="building-card reveal">
-    <div class="building-img-wrap">
+    <!-- SZCZEKOCIŃSKA 4 -->
+    <div class="building-card reveal">
+      <div class="building-img-wrap">
         <img class="building-img"
-             src="images/Janczarów5.png"
-             alt="Janczarów 5">
+          src="images/szczekocinska4.jpg"
+          alt="Szczekocińska 4">
+      </div>
+      <div class="building-info">
+        <div class="building-address">Szczekocińska 4</div>
+        <div class="building-desc">
+          Przedwojenna kamienica na Starym Mokotowie.
+        </div>
+        <span class="building-tag">Mokotów</span>
+      </div>
     </div>
-    <div class="building-info">
+
+    <!-- JANCZARÓW 5 -->
+    <div class="building-card reveal">
+      <div class="building-img-wrap">
+        <img class="building-img"
+          src="images/Janczarów5.png"
+          alt="Janczarów 5">
+      </div>
+      <div class="building-info">
         <div class="building-address">Janczarów 5</div>
         <div class="building-desc">
-            Kameralny budynek mieszkalny na Wilanowie.
+          Kameralny budynek mieszkalny na Wilanowie.
         </div>
         <span class="building-tag">Wilanów</span>
+      </div>
     </div>
-</div>
-	
-  </div>
 
+  </div>
 </section>
+
 
 <!-- PROCES -->
 <section class="process" id="proces">
