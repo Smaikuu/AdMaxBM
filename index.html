@@ -600,6 +600,44 @@
     .footer-inner { grid-template-columns: 1fr; }
     .hero-stats { gap: 1.5rem; }
   }
+
+/* Galeria nieruchomości - układ 3 + 2 */
+.buildings-centered {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.buildings-centered > .building-card {
+    flex: 0 0 calc((100% - 60px) / 3);
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.buildings-centered .building-img-wrap {
+    height: 225px;
+    overflow: hidden;
+}
+
+.buildings-centered .building-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .buildings-centered > .building-card {
+        flex-basis: calc((100% - 30px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .buildings-centered > .building-card {
+        flex-basis: 100%;
+    }
+}
 </style>
 </head>
 <body>
